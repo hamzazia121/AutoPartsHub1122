@@ -202,8 +202,8 @@ namespace AutoPartsHub.Controllers
         }
 
         // GET: Checkout
-        [HttpGet]
-        public IActionResult Checkout(int itemId, decimal totalAmount)
+        [HttpGet("Checkout")]
+        public IActionResult Checkout()
         {
           
             ViewData["ItemId"] = new SelectList(_context.TblItems, "ItemId", "ItemName");

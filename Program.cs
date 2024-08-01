@@ -1,17 +1,19 @@
 using AutoPartsHub.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AutoPartsHubContext>(option=>option.UseSqlServer(builder.Configuration.GetConnectionString("dbConnection")));
+builder.Services.AddDbContext<AutoPartsHubContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("dbConnection")).EnableSensitiveDataLogging());
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {
-        option.LoginPath = "/login/login";
+        option.LoginPath = "/Forbidden";
+        option.AccessDeniedPath = "/Forbidden";
         option.SlidingExpiration = true;
         option.ExpireTimeSpan = TimeSpan.FromHours(1);
     });

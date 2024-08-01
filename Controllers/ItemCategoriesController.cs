@@ -58,9 +58,9 @@ namespace AutoPartsHub.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemCategoryId,CategoryId,ItemId,CreatedAt,CreatedBy,UpdatedAt,UpdatedBy,MDelete")] TblItemCategory tblItemCategory)
+        public async Task<IActionResult> Create([Bind("ItemCategoryId,CategoryId,ItemId,ItemName,CategoryName")] TblItemCategory tblItemCategory)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(tblItemCategory);
                 await _context.SaveChangesAsync();

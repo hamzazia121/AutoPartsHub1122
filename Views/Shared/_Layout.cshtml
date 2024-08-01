@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>AutoPartsHub - Car Parts Store eCommerce HTML Template</title>
+    <title>AutoPartsHub - Car Parts Store </title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
@@ -64,8 +64,11 @@
                 <div class="col-lg-7 d-none d-lg-block">
                     <div class="site-navigation">
                         <ul class="main-menu nav">
-                          
+                            @if (User.IsInRole("Admin"))
+                            {
                             <li><a href="/AdminDashboard/index">Admin</a></li>
+                                
+                            }
                             <li><a href="/">Home</a></li>
               
                             <li><a asp-controller="Home" asp-action="About">About</a></li>
@@ -79,7 +82,7 @@
                                 <ul class="sub-menu">
                                     <li><a asp-controller="Home" asp-action="Cart">Cart</a></li>
                                     <li><a asp-controller="Home" asp-action="ConfirmOrder">Confirm Order</a></li>
-                                    <li><a asp-controller="Home" asp-action="Checkout">Checkout</a></li>
+                                    <li><a href="Checkout">Checkout</a></li>
                                     <li><a asp-controller="Home" asp-action="Wishlist">Wishlist</a></li>
                             
                                 </ul>
@@ -92,8 +95,18 @@
                 <div class="col-sm-8 col-lg-3">
                     <div class="site-action d-flex justify-content-center justify-content-sm-end align-items-center">
                         <ul class="login-reg-nav nav">
-                            <li><a id="Login">Login</a></li>
-                            <li><a id="Registeration">Register</a></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="Logout" style="cursor:pointer">Logout</a></li>
+
+
+                            }
+                            else
+                            {
+                            <li><a id="Login" style="cursor:pointer">Login</a></li>
+                            <li><a id="Registeration" style="cursor:pointer">Register</a></li>
+                                
+                            }
                         </ul>
 
                         <div class="mini-cart-wrap">
@@ -302,7 +315,7 @@
                     </button>
                 </div>
 
-                @await Html.PartialAsync("/Views/Authentication/_Login.cshtml", new TblUser())
+                @await Html.PartialAsync("/Views/Authentication/_Login.cshtml", new Login())
 
 
             </div>
@@ -317,7 +330,7 @@
                     </button>
                 </div>
 
-                @await Html.PartialAsync("/Views/Authentication/_Registeration.cshtml", new TblUser())
+                @await Html.PartialAsync("/Views/Authentication/_Registeration.cshtml", new Registeration())
 
 
             </div>

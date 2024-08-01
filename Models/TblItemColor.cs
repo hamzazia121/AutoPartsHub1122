@@ -13,7 +13,7 @@ public partial class TblItemColor
 
     public decimal? ColorPrice { get; set; }
 
-    public bool? IsDefault { get; set; }
+    public Boolean IsDefault { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
@@ -23,7 +23,7 @@ public partial class TblItemColor
 
     public int? Updatedby { get; set; }
 
-    public bool? MDelete { get; set; }
+    public Boolean MDelete { get; set; }
 
     public virtual TblColor? Color { get; set; }
 
