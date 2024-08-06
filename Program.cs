@@ -1,3 +1,5 @@
+using _Helper;
+using AutoPartsHub._Helper;
 using AutoPartsHub.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AutoPartsHubContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("dbConnection")).EnableSensitiveDataLogging());
-
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {

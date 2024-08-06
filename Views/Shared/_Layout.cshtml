@@ -74,6 +74,7 @@
                             <li><a asp-controller="Home" asp-action="About">About</a></li>
                             <li><a asp-controller="Home" asp-action="Shop">Shop</a></li>
                             <li><a asp-controller="Home" asp-action="Blog">Blogs</a></li>
+                            <li><a asp-controller="Home" asp-action="Orderconfirm">Orderconfirm</a></li>
                           
                             
                             <li><a href="gallery">Gallery</a></li>
@@ -182,7 +183,7 @@
                     <div class="col-lg-3">
                         <div class="widget-item">
                             <div class="about-widget">
-                                <a href="index.html"><img src="./assets/img/AutoLogo.png" alt="Logo" /></a>
+                                <a href="index.html"><img src="/assets/img/AutoLogo.png" alt="Logo" /></a>
                                 <p>
                                     AutoPartsHub is the best parts shop for your car
                                     accessories. What kind of parts do you
@@ -321,6 +322,23 @@
             </div>
         </div>
     </div>
+    
+    
+@*     <div class="modal fade bd-example-modal-lg" id="Gallereymodel" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="CreateModalHeader">User Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                @await Html.PartialAsync("/Views/Home/Gallerey.cshtml")
+
+
+            </div>
+        </div>
+    </div> *@
     <div class="modal fade bd-example-modal-lg" id="RegisterationModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -374,6 +392,12 @@
             $("#LoginModal").modal("show")
 
         });
+        // $("#Gallerey").click(function () {
+
+
+        //     $("#Gallereymodel").modal("show")
+
+        // });
         $("#Registeration").click(function () {
 
 
