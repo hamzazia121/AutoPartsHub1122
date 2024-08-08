@@ -7,7 +7,7 @@
             const string numbers = "0123456789";
             const string letters = "abcdefghijklmnoqprstuvwyzx";
             const string LETTERS = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
-            const string symbols = "!@#$^&*?";
+            const string symbols = "!@#$&*?";
 
             string allChars = numbers + letters + LETTERS + symbols;
             Random random = new Random();

@@ -77,13 +77,13 @@
                             <li><a asp-controller="Home" asp-action="Orderconfirm">Orderconfirm</a></li>
                           
                             
-                            <li><a href="gallery">Gallery</a></li>
+                            <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
                             <li class="has-submenu">
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a asp-controller="Home" asp-action="Cart">Cart</a></li>
                                     <li><a asp-controller="Home" asp-action="ConfirmOrder">Confirm Order</a></li>
-                                    <li><a href="Checkout">Checkout</a></li>
+                                    <li><a asp-controller="Home" asp-action="Checkout">Checkout</a></li>
                                     <li><a asp-controller="Home" asp-action="Wishlist">Wishlist</a></li>
                             
                                 </ul>
@@ -183,7 +183,7 @@
                     <div class="col-lg-3">
                         <div class="widget-item">
                             <div class="about-widget">
-                                <a href="index.html"><img src="/assets/img/AutoLogo.png" alt="Logo" /></a>
+                                <a asp-controller="Home" asp-action="index"><img src="/assets/img/AutoLogo.png" alt="Logo" /></a>
                                 <p>
                                     AutoPartsHub is the best parts shop for your car
                                     accessories. What kind of parts do you

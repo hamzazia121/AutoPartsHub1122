@@ -65,7 +65,7 @@ namespace AutoPartsHub.Controllers
         }
 
 
-        [Route("gallery")]
+     
         public IActionResult Gallery()
         {
             return View();
